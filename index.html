@@ -11,7 +11,7 @@
                 const url = `https://dummyjson.com/products`;
                 const res = await fetch(url);
                 const data = await res.json();
-                document.getElementById("para1").innerHTML = data.products(0).map;
+                document.getElementById("para1").innerHTML = data.products[0].title;
                 document.getElementById("para1").style.color = "red";
                 console.log("response:",data);
             }
@@ -24,6 +24,6 @@
 </head>
 <body>
     <h1>GITHUB PAGE INFO</h1>
-    <p id=""para1>Essence Measure Lab Prices</p>
+    <p id="para1">Essence Measure Lab Prices</p>
 </body>
 </html>
