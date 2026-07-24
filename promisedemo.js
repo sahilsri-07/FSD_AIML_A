@@ -52,4 +52,5 @@ async function test(){
     }
 }
 test();
+
 console.log("call another App");

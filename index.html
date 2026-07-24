@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synchronous Demo</title>
-    <script src="./promisedemo.js"></script>
+    <script>
+        async function loadProductDetails(){
+            try{
+                // const url = `https://api.github.com/users/${username}`;
+                const url = `https://dummyjson.com/products`;
+                const res = await fetch(url);
+                const data = await res.json();
+                document.getElementById("para1").innerHTML = data.products(0).map;
+                document.getElementById("para1").style.color = "red";
+                console.log("response:",data);
+            }
+            catch(err){
+                console.log("Error:",err);
+            }
+        }
+        loadProductDetails();
+    </script>
 </head>
 <body>
-    
+    <h1>GITHUB PAGE INFO</h1>
+    <p id=""para1>Essence Measure Lab Prices</p>
 </body>
 </html>
